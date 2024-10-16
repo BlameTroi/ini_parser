@@ -1,0 +1,23 @@
+# astyle trying to find one i like
+style=attach
+indent=force-tab=8
+attach-namespaces
+attach-classes
+attach-extern-c
+attach-closing-while
+indent-after-parens
+indent-col1-comments
+indent-preproc-define
+break-return-type
+break-return-type-decl
+pad-header
+unpad-paren
+max-code-length=80
+break-after-logical
+keep-one-line-blocks
+keep-one-line-statements
+squeeze-lines=8
+pad-header
+pad-include
+pad-comma
+convert-tabs
