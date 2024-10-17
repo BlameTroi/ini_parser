@@ -47,6 +47,9 @@ bool
  * in:   : function pointer of the callback function.
  * return: roughly the number of characters handled during
  *         parsing.
+ *
+ * a negative return means there was some error in the input
+ * stream.
  */
 
 int

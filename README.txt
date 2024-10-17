@@ -65,4 +65,8 @@ only libraries.
 To Do & Bugs
 ------------
 
-* Missing keys in a 'key = value' pair throw the parser out of sync.
+* *fixed* Missing keys in a 'key = value' pair throw the parser out of sync.
+  Now a negative count is returned to the client. Negative means some error
+  occured.
+
+* Missing values also throw the parser out of sync.

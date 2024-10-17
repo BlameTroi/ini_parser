@@ -130,10 +130,13 @@ const char char_class_key_end[] = "=\n";
  * in/out: file stream on an ini file
  * in:   : expected to be a pointer, or any pointer sized
  *         object holding context for the client's callback
- *         function.
- * in:   : function pointer of the callback function.
- * return: ~the number of characters handled during parsing.
- *         a negative value means there was some error.
+ *         function
+ * in:   : function pointer of the callback function
+ * return: roughly the number of characters handled during
+ *         parsing
+ *
+ * a negative return means there was some error in the input
+ * stream.
  */
 
 int
@@ -163,10 +166,14 @@ parse_ini(
 	) {
 		chars_out += len_read;
 		if (feof(ini_file) || ferror(ini_file))
-			break;
+			return ferror(ini_file) ? -chars_out : chars_out;
 	}
 
-	return ferror(ini_file) ? -chars_out : chars_out;
+	/* we only get here if there was an error (negative) return
+	 * from read_next_expression. negate our result and send it
+	 * to the client. */
+
+	return -chars_out;
 }
 
 /*
@@ -232,6 +239,10 @@ read_next_expression(
 	case '#':         /* start of a comment, either shell */
 	case ';':         /* or assembly langauge style. */
 		return skip_until(ini_file, "\n");
+
+	case '=':         /* missing key */
+		ungetc(c, ini_file);
+		return -1;
 
 	default:          /* assumed to be the start of a key = value pair */
 		/* put the character back so we can collect it as the first

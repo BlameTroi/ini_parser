@@ -60,6 +60,10 @@ main(
 	last_section[0] = '\0';
 	int some_count = parse_ini(file, &bogus_ctx, cb_ini_parser);
 	printf("\nparse complete, returned %d\n", some_count);
+	if (some_count < 1) {
+		printf("parse failed, check input file\n");
+		return EXIT_FAILURE;
+	}
 	return EXIT_SUCCESS;
 }
 
