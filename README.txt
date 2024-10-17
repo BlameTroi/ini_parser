@@ -52,10 +52,17 @@ Code Notes
 The original code as pulled from the paper is in a separate directory
 from my experiments with it. My editor formatters will change tabbing
 and might move some braces around, but the code is meant to be
-identical.
+identical to the original. Some minor bugs were found and fixed, these
+are noted by comments flagged 'txb'.
 
-I'll do my work in another directory. If I find that there is
-something here that I want to reuse, I'll create a third directory for
-that code, which will likely end up in my personal header only
-libraries.
+I'll do my work through in another directory. If I find that there is
+something here that I want to reuse, I'll either create a third
+directory for that code, or just move it over to my personal header
+only libraries.
 
+
+
+To Do & Bugs
+------------
+
+* Missing keys in a 'key = value' pair throw the parser out of sync.
