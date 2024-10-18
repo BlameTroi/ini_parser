@@ -37,12 +37,12 @@ Either public domain under the UNLICENSE, or MIT as you like.
 Dependencies and Tooling
 ------------------------
 
-This is all build on a MacBook M2 using Apple's current standard
+This is all built on a MacBook M2 using Apple's current standard
 Clang. I'm transitioning from GNU Make to CMake and Ninja. Formatting
 is done every time a file is saved using Artistic Style. I edit with
-Emacs with Eglot, Treesitter, and Clangd as my LSP. I compile with
-"-Wall --pedantic-errors -Werror -std=c18" for all builds. Debug
-builds add "-g3 -fsanitize=address".
+Emacs using Eglot, Treesitter, and Clangd. I compile with "-Wall
+--pedantic-errors -Werror -std=c18" for all builds. Debug builds add
+"-g3 -fsanitize=address".
 
 
 
@@ -65,8 +65,8 @@ only libraries.
 To Do & Bugs
 ------------
 
-* *fixed* Missing keys in a 'key = value' pair throw the parser out of sync.
-  Now a negative count is returned to the client. Negative means some error
-  occured.
+* *fixed* Missing keys in a 'key = value' pair throw the parser out
+  of sync. Now a negative count is returned to the client. Negative
+  means some error occured.
 
 * Missing values also throw the parser out of sync.
