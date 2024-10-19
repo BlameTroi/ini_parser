@@ -65,14 +65,3 @@ The original was advertised as taking about 150 lines. 'cloc' reports
 
 The workthru/rewrite is reported as having 206 lines of code. not 
 bad at all.
-
-
-
-To Do & Bugs
-------------
-
-* *fixed* Missing keys in a 'key = value' pair throw the parser out
-  of sync. Now a negative count is returned to the client. Negative
-  means some error occured.
-
-* Missing values also throw the parser out of sync.
