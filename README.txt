@@ -55,10 +55,16 @@ and might move some braces around, but the code is meant to be
 identical to the original. Some minor bugs were found and fixed, these
 are noted by comments flagged 'txb'.
 
-I'll do my work through in another directory. If I find that there is
-something here that I want to reuse, I'll either create a third
-directory for that code, or just move it over to my personal header
-only libraries.
+I'll did my work through in another directory and then redid most of
+the code to make something suitable for inclusion in my libraries. in
+so doing i tightened up some behavior (missing keys or values were
+ignored in the original). 
+
+The original was advertised as taking about 150 lines. 'cloc' reports
+157 lines so mission accomplished.
+
+The workthru/rewrite is reported as having 206 lines of code. not 
+bad at all.
 
 
 
