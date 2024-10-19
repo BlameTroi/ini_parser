@@ -30,12 +30,13 @@ cb_ini_parser(
 	const char *value,
 	void *ctx
 ) {
-	if (strcmp(last_section, section) != 0) {
-		printf("\nsection    %s\n", section);
-		strncpy(last_section, section, INI_SEC_MAXLEN);
-	}
-	printf("key:value  %s:%s\n", key, value);
-	return 0;
+	if (strcmp(last_section, section) != 0)
+		printf("\nsection    '%s'\n", section);
+	strncpy(last_section, section, sizeof(last_section));
+	printf("key:value  '%s':'%s'\n", key, value);
+	return strcmp(section, "STOP") == 0
+	&& strcmp(key, "STOP") == 0
+	&& strcmp(value, "STOP") == 0;
 }
 
 /*
@@ -58,9 +59,9 @@ main(
 		return EXIT_FAILURE;
 	}
 	last_section[0] = '\0';
-	int some_count = parse_ini(file, &bogus_ctx, cb_ini_parser);
-	printf("\nparse complete, returned %d\n", some_count);
-	if (some_count < 1) {
+	int parse_status = parse_ini(file, &bogus_ctx, cb_ini_parser);
+	printf("\nparse complete, returned %d\n", parse_status);
+	if (parse_status == EXIT_FAILURE) {
 		printf("parse failed, check input file\n");
 		return EXIT_FAILURE;
 	}
