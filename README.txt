@@ -63,5 +63,5 @@ ignored in the original).
 The original was advertised as taking about 150 lines. 'cloc' reports
 157 lines so mission accomplished.
 
-The workthru/rewrite is reported as having 206 lines of code. not 
+The workthru/rewrite is reported as having 206 lines of code. Not 
 bad at all.
