@@ -57,7 +57,7 @@ are noted by comments flagged 'txb'.
 
 I'll did my work through in another directory and then redid most of
 the code to make something suitable for inclusion in my libraries. in
-so doing i tightened up some behavior (missing keys or values were
+so doing I tightened up some behavior (missing keys or values were
 ignored in the original). 
 
 The original was advertised as taking about 150 lines. 'cloc' reports
@@ -65,3 +65,15 @@ The original was advertised as taking about 150 lines. 'cloc' reports
 
 The workthru/rewrite is reported as having 206 lines of code. Not 
 bad at all.
+
+Additions
+---------
+
+1. I threw together a quick Object Pascal version just to play with
+   callbacks and streams. The parse is the same, but I didn't bother
+   to package it s a unit. `sloccount` reports 180 lines of code.  
+
+2. The original article domain's certificate is outdated and I could
+   not reference it (October 2025). I downloaded a snapshot from the
+   wayback machine using the single file browser plugin to preserve
+   a copy for quick reference.

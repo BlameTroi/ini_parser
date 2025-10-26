@@ -1,0 +1,1 @@
+fpc -gw3 -gl -Sg -Xg  "$@"
